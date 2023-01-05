@@ -1,0 +1,13 @@
+env
+data/*.zip
+data
+__pycache__
+graphs
+debug.csv
+*.xml
+project_info.txt
+*.json
+links.txt
+organizationDetails.py
+main.py
+project_info.txt

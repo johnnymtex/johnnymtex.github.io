@@ -1,0 +1,163 @@
+div {
+    border-width: 1px;
+    border-color: none;
+}
+
+svg {
+    background-color: rgba(157, 160, 147, 0);
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.funding_graph {
+    width: 75%;
+    justify-content: center;
+}
+
+.main_graph_topic {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin:auto;
+}
+
+/* .other_graph {
+    width: 100%;
+} */
+
+.event_bar {
+    position: absolute;
+    bottom: 0px;
+}
+
+.event_bar>* {
+    position: relative;
+}
+.main_event_lines{
+    transform: translate(-50px, 0);
+}
+.target_line{
+    stroke: red;
+}
+.axis_title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-top:-5px;
+}
+
+.axis_title.vertical{
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+} 
+.axis_title.vertical.leading{
+    transform: rotate(-180deg);
+}
+
+
+.axis_title_vertical_scatter{
+    writing-mode: vertical-rl;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    transform: rotate(-180deg);
+    margin-right:-30px
+} 
+
+.axis_title_horizontal_scatter{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    margin-right:-30px
+} 
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.other_graph{
+    display: flex;
+    align-items: center;
+}
+.horizontal_container{
+    display: flex;
+    align-items: center;
+}
+
+div.control_panel_scatter{
+    padding-left: 50px;
+}
+
+div.checkbox_container {
+    display: inline-block;
+    margin-right: 15px;
+    margin-top:15px
+}
+
+#funding_graph {
+    width: 100%;
+    height: 420px;
+
+}
+.funding_graph{
+    padding: 10px
+}
+#funding_graph .graph_area path {
+    stroke: dimgray;
+    fill: none;
+}
+
+#funding_graph .main_event_lines path {
+    stroke: rgb(55, 49, 73);
+    stroke-width: 1px;
+    stroke-dasharray: 5;
+    fill-opacity: 0;
+}
+
+#artical_page {
+    position: fixed;
+    background-color: black;
+    opacity: 80%;
+    width: 25%;
+    z-index: 2;
+    top: 45%;
+    right: 35%;
+    transform: translate(-400%, 0px);
+    transition: all 1s ease;
+    border:none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* border-style: solid;
+    border-color: black;
+    border-width: medium; */
+    padding-left:30px;
+    padding-right:30px;
+    padding-bottom: 15px;
+    font-size: 1.5vh;
+    color: white;
+}
+
+#artical_page.shown {
+    transform: none
+}
+
+#artical_page:hover {
+    transform: none
+}
+
+.series_group line {
+    stroke: red;
+    stroke-width: 2;
+}
+
+#hex_graph line {
+    stroke: grey;
+    stroke-width: 1.5;
+}

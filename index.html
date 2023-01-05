@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vis project</title>
+    <link href=style.css rel=stylesheet>
+    <link href=style_joao.css rel=stylesheet>
+    <link href=style_m.css rel=stylesheet>
+    <script type="text/javascript" src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<style>
+
+</style>
+
+<body style="background: rgba(157, 160, 147, 0.3)">
+
+    <div id="funding_graph_popup" class="pop_up">
+        <span id="dot" class="dot"></span> pop up data
+    </div>
+    <div id="hex_graph_popup" class="pop_up">
+        <span class="dot"></span> pop up data
+    </div>
+    <div id="scatter_graph_popup" class="pop_up">
+        pop up data
+    </div>
+
+
+
+    <div class="main">
+        <div class="box">
+            <h1>Analysis on the European Commission's funding on Energy</h1>
+        </div>
+    </div>
+    <div style="margin-top: 20px;margin-bottom: 20px; margin-left:200px; margin-right:200px">
+        <p align="justify">
+            Climate change is a worldwide concern. To diminish global warming, several nations are making it a priority to rein in greenhouse gas emissions. The European Union is one of the major contributors who are striving for this objective. In the following
+            graphs you will be able to visualize the impact of the European Commission's actions to fight this growing problem. The first graph presents information of the total percentage of EU greenhouse gas emissions over the years (bars) and compares
+            it to the set goal for 2030 (red line). This information is overlayed by line graphs representing the funding investments of the European Commission in several energy sources and topics related to them (namely power production). <strong>Click on the graph and drag</strong>            to see its evolution through the years! Want to know more? <strong>Hover over the orange bubbles!</strong>
+        </p>
+    </div>
+
+    <div id="artical_page" class="hidden">
+        <article>
+            <h2>title</h2>
+            <small>1-1-2007</small> <a href=".">source</a>
+
+            <div class="content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </article>
+
+    </div>
+
+    <div id="check_boxes" class="control_panel" style="margin-top:10px; margin-bottom:15px; text-align: center;"></div>
+
+    <div class="main_graph_topic">
+        <div class="axis_title vertical leading">EC Funding [Million €]</div>
+        <div class="funding_graph" style="text-align: center;">
+            <svg id="funding_graph" class="scrollable"></svg>
+            <div class="axis_title horizontal">Year</div>
+        </div>
+        <div class="axis_title vertical">GHG Emissions [%]</div>
+    </div>
+    </div>
+
+    <div style="margin-top: 20px;margin-bottom: 20px; margin-left:200px; margin-right:200px">
+        <p align="justify">
+            The following graphs present different perspectives of the acquired data, exploring how the European Commission funding affects individual countries. The scatter plot on the left shows the correlation between European Commission's funding and country's
+            energy usage. <strong>Swap between different energy types!</strong> The graph on the right shows an individual country’s power usage. Feel free to <strong>compare</strong> them amongst each other!
+
+        </p>
+    </div>
+
+    <div class="main" style="margin-top:55px">
+        <p class="label" style="position:absolute; margin-top: -20px; margin-left: -500px; color:rgb(121, 121, 121); font-size:15px">EC Funding (y-axis)</p>
+        <div class="other_graph">
+
+            <div class="axis_title_vertical_scatter">EC Funding</div>
+            <div class="scatter_plot container" style="display: block; text-align: center;">
+                <div id="scatter_plot_selectors" class="control_panel_scatter" style="display:inline-block; text-align: center; margin-right: 100px">
+                </div>
+                <div id="percentage_selector" class="control_panel_percentage_scatter" style="display:inline-block; text-align: center; padding-bottom: -100px">
+                </div>
+                <svg id="scatter_plot" style="display:block;">
+                </svg>
+                <div class="horizontal_container" style="display:block; margin:auto; text-align:center; margin-top:-40px">
+                    <div class="axis_title_horizontal_scatter">% of Total Energy Produced</div>
+                </div>
+                <div class="bubble scale" style="margin-top:15px">
+                    <p class="idk" style="display: inline-block; margin-right: 45px; color: grey; letter-spacing: 5.5px;">TOTAL ENERGY PRODUCED</p>
+                    <span align="center" class="dot_2" style="margin-right: 5px;"></span>
+                    <p style="display: inline-block; color:black;">1 TWh</p>
+
+                    <span align="center" class="dot" style="margin-left: 25px; margin-right: 5px;"></span>
+                    <p style="display: inline-block; color:black;">600 TWh</p>
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="other_graph" style="display:block;  text-align: center; margin-left:200px">
+            <svg id="hex_graph" data-aos="fade-in" data-aos-delay=0>
+            </svg>
+            <div id="hex_graph_selectors" class="control_panel" style="text-align: center;">
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class = "footer" style="margin-top:40px; margin-bottom:none">
+        <p style="float: left; display: inline-block; margin-left:40px">Analysis on the European Comission's Funding - Energy</p>
+        <p style="text-align: center; display: inline-block; margin-left:-275px">IN4089 | Data Visualization | Group 15</p>
+        <a href="https://www.tudelft.nl">
+            <img src="https://cdn.freebiesupply.com/logos/large/2x/tu-delft-2-logo-black-and-white.png" style="width:80px; display: inline-block; float:right; margin-right: 40px; margin-top:10px" alt="Italian Trulli">
+        </a>
+    </div>
+
+
+    <ul id=" groups " hidden>
+        <li></li>
+    </ul>
+
+</body>
+<script>
+    // document.querySelectorAll('.scrollable').forEach(e => {
+    //     e.addEventListener('wheel', function(e) {
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //         return false;
+    //     }, {
+    //         passive: false
+    //     });
+    // })
+    const formatter_compact = Intl.NumberFormat('en', {
+        notation: 'compact'
+    })
+
+    function titleCase(str) {
+        str = str.toLowerCase().split(' ');
+        for (var i = 0; i < str.length; i++) {
+            str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+        }
+        return str.join(' ');
+    }
+
+    //util funcs
+    function items(d) {
+        return Object.keys(d).map(function(e, i) {
+            return [e, d[e]]
+        });
+    }
+
+    function zip(x, y) {
+        return Array.from(Array(Math.max(x.length, y.length)), (_, i) => [x[i], y[i]]);
+    }
+
+    function range(s, e) {
+        return (new Array(e - s + 1)).fill(undefined).map((_, k) => k + s);
+    }
+
+    function intersectRect(r1, r2) {
+        return !(r2.left > r1.right || r2.right < r1.left || r2.top > r1.bottom || r2.bottom < r1.top);
+    }
+
+    function radial_to_cart(r, theta) {
+        return [Math.round(r * Math.cos(theta * Math.PI / 180)), Math.round(r * Math.sin(theta * Math.PI / 180))]
+    }
+
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
+
+    function intersection(arr1, arr2) {
+        return arr1.filter(val => arr2.indexOf(val) != -1)
+    };
+
+    //make the popup on graphs hide and show
+    popup = document.getElementById("funding_graph_popup")
+    square = document.getElementById("dot")
+
+    function showPopup(event) {
+        // console.log(event)
+        target_box = event.target.getBoundingClientRect()
+        popup.style.opacity = 1
+        popup.style.display = "inline-block"
+        popup.style.left = target_box.x + target_box.width + "px "
+        popup.style.top = target_box.y - target_box.height + 10 + "px "
+        popup.innerText = event.target.getAttribute("data")
+    }
+
+    function showPopup_hex(event) {
+        // console.log(event)
+        target_box = event.target.getBoundingClientRect()
+        popup.style.left = target_box.x + target_box.width + "px "
+        popup.style.top = target_box.y - target_box.height + 10 + "px "
+        popup.style.opacity = 0.75
+        str = event.target.getAttribute("data")
+        str = str.split(",")
+        str[0] = str[0].substring(0, 1).toUpperCase() + str[0].substring(1);
+        str[1] = parseFloat(str[1] * 100).toFixed(2) + "%"
+        popup.innerText = str[0] + ", " + str[1]
+        draw()
+    }
+
+    function showPopup_scatter(event) {
+        // console.log(event)
+        target_box = event.target.getBoundingClientRect()
+        popup.style.left = target_box.x + target_box.width + "px "
+        popup.style.top = target_box.y - target_box.height + 10 + "px "
+        popup.style.opacity = 0.75
+        popup.style.zIndex = "10"
+        str = event.target.getAttribute("data")
+        str = str.split(",")
+        str[1] = parseFloat(str[1]).toFixed(2) + "%"
+        str[2] = parseFloat(str[2]).toFixed(2)
+
+
+        /* str_list = ["", str[0]]
+
+        console.log(str_list)
+
+        str[0] = convert_country_names(str_list) */
+
+        if (event.fromElement.getAttribute("percentages") == 'false') {
+            popup.innerText = str[0] + ", " + str[1] + "\n" + str[2] + " Million € invested"
+        }
+        else
+        {
+            popup.innerText = str[0] + ", " + str[1] + "\n" + str[2] + "% energy investments"
+        }
+
+        console.log("gw" + str[3])
+    }
+
+    function hidePopup(event) {
+        popup.style.cursor = "default"
+        popup.style.zIndex="-1"
+        popup.style.opacity = null
+        popup.style.display = null
+    }
+
+    //make floating text hide and show
+    let artical_popup = document.getElementById("artical_page")
+
+    function fill_artical(title, date, text, link) {
+
+
+        return () => {
+            // artical_popup.style.opacity = "1"
+            artical_popup.className = "shown"
+
+            artical_popup.querySelector("h2 ").innerText = title
+            artical_popup.querySelector("small ").innerText = date.toDateString()
+            artical_popup.querySelector("a ").href = link
+            artical_popup.querySelector("div ").replaceChildren()
+            artical_popup.querySelector("div ").children =
+                text.split("\n ").map(elm => {
+                    let p = document.createElement("p");
+                    p.innerText = elm;
+                    return p
+                }).forEach(elm => {
+                    artical_popup.querySelector("div ").appendChild(elm)
+                })
+
+        }
+    }
+
+    function hide_artical() {
+        artical_popup.className = "hidden"
+
+    }
+</script>
+<script type="text/javascript " src="./data_grouping.js "></script>
+<script type="text/javascript " src="./funding_graph.js "></script>
+<script type="text/javascript " src="./hex_graph.js "></script>
+<script type="text/javascript " src="./timeline.js "></script>
+<script type="text/javascript " src="./scatter_plot.js "></script>
+<script>
+    //after loading data we send to the appropriate location
+    //there are lots of options for changing the look of the graphs
+    fetch("./topic_grouping.json ").then(response => response.json()).then(data => {
+        group_data = data;
+        // display_grouping()
+    })
+
+
+    fetch("./country_consumption_funding_data.json ").then(response => response.json()).then(data => {
+        console.log("consumption data ")
+        console.log(data)
+        hex_graph(data, svg_size_func = svg => {
+            return [500, 600]
+        }, radius = 200, sub_lines = 5, option_names = {
+            "FR ": "france "
+        }, showPopup = showPopup_hex, hidePopup = hidePopup)
+        make_scatters(data, svg_func = (svg) => {
+            return [650, 500]
+        }, graph_dims_func = (svg_size) => {
+            return [400, 400, 20]
+        }, showPopup = showPopup_scatter, hidePopup = hidePopup, per_graph = false)
+    })
+    f = function(svg) {
+        end = [svg.getBoundingClientRect.height, svg.getBoundingClientRect().width];
+        if (isNaN(end[0])) {
+            end[0] = 400
+        };
+        if (isNaN(end[1]) || end[1] == 0) {
+            end[1] = 400
+        };
+        // console.log("graph_size")
+        // console.log(end)
+        // end = [600,600]
+        return end
+    }
+
+
+
+
+    fetch("./event_data.json ").then(response => response.json()).then(data => {
+        console.log("event data ")
+        console.log(data)
+        zoom_update_call_back = timeline(data, fill_artical, hide_artical, item_count = 5, y_pos = 15);
+
+        fetch("./funding_data.json ").then(response => response.json()).then(funding_data => {
+            console.log("funding data ")
+            console.log(funding_data)
+            fetch("./greenhouse_emissions.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    em_data = data
+                    console.log("em_data")
+                    console.log(em_data)
+                    funding_graph(zoom_update_call_back, funding_data, em_data, init_selected = ["fossil energy"], init_zoom = 2, init_pan = -.3, domains = [
+                            [0, 10 ** 7.3],
+                            [new Date("1/1/2007"), new Date("1/1/2030")]
+                        ],
+                        svg_height_function = f,
+                        dims_function = svg_size => [svg_size[0] - 20, svg_size[1] - 20],
+                        y_lin = true, showPopup = showPopup, hidePopup = hidePopup)
+                })
+        })
+    })
+</script>
+
+</html>

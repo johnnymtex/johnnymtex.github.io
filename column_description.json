@@ -1,0 +1,121 @@
+{
+  "csv/project.csv": {
+    "id": "projectID(grant agreement number) KEY",
+    "acronym": "project acronym",
+    "status": "project status",
+    "title": "project title",
+    "startDate": "project start date DATE",
+    "endDate": "project end date DATE",
+    "totalCost": "project total cost ,->. FLOAT",
+    "ecMaxContribution": " EC max contribution (commitment from the council max budget) ,->. FLOAT",
+    "legalBasis": "",
+    "topics": "topic of project",
+    "ecSignatureDate": "DATE",
+    "frameworkProgramme": "just the group {fp7,horizon}",
+    "masterCall": "all nan DROP",
+    "subCall": "all nan DROP",
+    "fundingScheme": null,
+    "nature": "crisis",
+    "objective": "objective statement of project",
+    "contentUpdateDate": "DATE",
+    "rcn": "Record Control Number",
+    "grantDoi": null
+  },
+  "csv/topics.csv": {
+    "projectID": "key to project.csv KEY",
+    "topic": "key in project.csv KEY",
+    "title": "expanded name"
+  },
+  "csv/organization.csv": {
+    "projectID": "key to project.csv KEY",
+    "projectAcronym": "key to project.csv",
+    "organisationID": "key organization ID KEY INT note UK spelling",
+    "vatNumber": "",
+    "name": "organization name",
+    "shortName": null,
+    "SME": "standards authority engineering https://www.sme.org",
+    "activityType": null,
+    "street": "location information",
+    "postCode": "location information",
+    "city": "location information",
+    "country": "location information",
+    "nutsCode": "all null DROP",
+    "geolocation": "location information",
+    "organizationURL": null,
+    "contactForm": null,
+    "contentUpdateDate": null,
+    "rcn": null,
+    "order": "KEY",
+    "role": "KEY",
+    "ecContribution": "FLOAT",
+    "netEcContribution": "FLOAT",
+    "totalCost": "FLOAT ,->.",
+    "endOfParticipation": "KEY",
+    "active": "BOOL"
+  },
+  "csv/webLink_2.csv": {
+    "projectID": "KEY",
+    "physUrl": null,
+    "id": "KEY",
+    "availableLanguages": null,
+    "status": null,
+    "archivedDate": null,
+    "type": null,
+    "source": null,
+    "represents": null
+  },
+  "csv/webLink.csv": {
+    "projectID": "KEY",
+    "physUrl": null,
+    "id": "KEY",
+    "availableLanguages": null,
+    "status": null,
+    "archivedDate": null,
+    "type": "KEY",
+    "source": "KEY",
+    "represents": null
+  },
+  "csv/euroSciVoc.csv": {
+    "projectID": "KEY",
+    "euroSciVocCode": "KEY",
+    "euroSciVocPath": null,
+    "euroSciVocTitle": null,
+    "euroSciVocDescription": "DROP"
+  },
+  "csv/legalBasis.csv": {
+    "projectID": "KEY",
+    "legalBasis": "KEY",
+    "title": null,
+    "uniqueProgrammePart": null
+  },
+  "csv/webItem.csv": {
+    "language": null,
+    "availableLanguages": null,
+    "uri": null,
+    "title": null,
+    "type": null,
+    "source": null,
+    "represents": null
+  },
+  "gdp.csv.gz": {
+    "DATAFLOW": "DROP",
+    "LAST UPDATE": "DROP",
+    "freq": "DROP",
+    "na_item": "DROP",
+    "unit": "DROP",
+    "geo": "KEY",
+    "TIME_PERIOD": "KEY",
+    "OBS_VALUE": null,
+    "OBS_FLAG": null
+  },
+  "population.csv.gz": {
+    "DATAFLOW": "DROP",
+    "LAST UPDATE": "DROP",
+    "freq": "DROP",
+    "indic_de": "DROP",
+    "geo": "KEY",
+    "TIME_PERIOD": "KEY",
+    "OBS_VALUE": null,
+    "OBS_FLAG": null
+  }
+}

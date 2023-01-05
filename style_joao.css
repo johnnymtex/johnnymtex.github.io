@@ -1,0 +1,394 @@
+#hex_graph g.country_1 path {
+    fill: #A40066;
+    stroke: #7E004F;
+    fill-opacity: 40%;
+    stroke-width: 2px;
+    transition: all .35s ease;
+}
+
+#hex_graph g.country_1 path:hover{
+    fill-opacity:80%;
+}
+
+#hex_graph g.country_1 circle {
+    fill: #7E004F;
+    stroke: none;
+    r: 5;
+    transition:all .2s ease;
+}
+
+#hex_graph g.country_2 path:hover{
+    fill-opacity:80%;
+}
+
+#hex_graph g.country_1 circle:hover {
+    r: 7
+}
+
+#hex_graph g.country_2 path {
+    fill: #007355;
+    stroke: #00503B;
+    fill-opacity: 40%;
+    stroke-width: 2px;
+}
+
+#hex_graph g.country_2 circle {
+    fill: #00503B;
+    stroke: none;
+    r: 5;
+    transition:all .2s ease;
+}
+
+#hex_graph g.country_2 circle:hover {
+    r: 7
+}
+
+#hex_graph g.country_3 path {
+    fill: #03468F;
+    stroke: #033164;
+    fill-opacity: 40%;
+    stroke-width: 2px;
+}
+
+#hex_graph g.country_3 circle {
+    fill: #033164;
+    stroke: none;
+    r: 5;
+    transition:all .2s ease;
+}
+
+#hex_graph g.country_3 circle:hover {
+    r: 7
+}
+
+#hex_graph g.country_3 path:hover{
+    fill-opacity:80%;
+}
+
+#hex_graph g.graph_area{
+    padding-left: 100px;
+}
+
+#hex_graph text {
+    font-family: 'Segoe UI', sans-serif;
+    padding-left: 100px;
+}
+
+div.country_select_group {
+    display:inline-block;
+    padding-right: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+div.percentage_selectors{
+    display: inline-block;
+    padding-right: 25px;
+}
+
+select#country_1 {
+    border-color:#A40066;
+    border-top:0px;
+    border-left:none;
+    border-right:none;
+    border-width: 3px;
+    transition: all 0.3s ease;
+}
+
+
+select#country_2 {
+    border-color:#007355;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-width: 3px;
+}
+
+select#country_3 {
+    border-color:#03468F;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-width: 3px;
+}
+
+select {
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-color: inherit;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+div.pop_up {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 80%;
+    margin-left: 5px;
+    padding: 5px;
+    transition: all 0.5s ease;
+    background-color: black;
+    color: white;
+    border: none;
+    position:fixed;
+    z-index: 2;
+}
+
+.pop_up {
+    margin-right: 15px;
+    position: fixed;
+    opacity: 0;
+    z-index: 2;
+    background-color: white;
+    stroke: green;
+    stroke-width: 10px;
+}
+
+select#energy_scatter {
+    text-transform: capitalize;
+    width:175px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+div.control_panel_scatter {
+    transform:scale(0.9,1);
+}
+
+div.control_panel_scatter>* {
+    transform:scale(1.111111, 1)
+}
+
+input[type="radio"]:after {
+    width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        left: -1px;
+        position: relative;
+        background-color: #e8e4dc;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid grey;
+        cursor:pointer;
+}
+
+input[type="radio"]:checked:after {
+    width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        left: -1px;
+        position: relative;
+        background-color: grey;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid grey;
+}
+
+
+h1, p, label {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+#scatter_plot circle{
+    fill-opacity: 50%;
+    filter: brightness(70%);
+    transition: all 0.75s ease, fill-opacity 0.1s ease;
+}
+
+#scatter_plot circle:hover{
+    fill-opacity: 90%;
+    stroke: black;
+    stroke-width: 2px;
+    position: inherit;
+    z-index: inherit + 1;
+}
+
+.dot {
+    height: 40px;
+    width: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin:auto;
+    vertical-align: middle;
+  }
+
+  .dot_2 {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin:auto;
+    vertical-align: middle;
+  }
+
+  div.footer {
+    display: block;
+    position:absolute;
+    left: 0;
+    width: 100%;
+    height: 53px;
+    background-color: rgb(41, 41, 41);
+    color: white;
+    text-align: center;
+  }
+
+
+#scatter_plot circle.France{
+    fill: #2d5aab;
+}
+
+#scatter_plot circle.Albania{
+    fill: #ed2626;
+}
+
+#scatter_plot circle.Austria{
+    fill: #ed2623;
+}
+
+#scatter_plot circle.Belgium{
+    fill: #ed1326;
+}
+
+#scatter_plot circle.Bosnia{
+    fill: #2b449e;
+}
+
+#scatter_plot circle.Bulgaria{
+    fill: #47b749;
+}
+
+#scatter_plot circle.Croatia{
+    fill: #f21c28;
+}
+
+#scatter_plot circle.Cyprus{
+    fill: #f58b1d;
+}
+
+#scatter_plot circle.Czechia{
+    fill: #25409b;
+}
+
+#scatter_plot circle.Denmark{
+    fill: #ed2623;
+}
+
+#scatter_plot circle.Estonia{
+    fill: #5d8dd7;
+}
+
+#scatter_plot circle.Finland{
+    fill: #4079c0;
+}
+
+#scatter_plot circle.Germany{
+    fill: #070908;
+}
+
+#scatter_plot circle.Greece{
+    fill: #3C76CA;
+}
+
+#scatter_plot circle.Hungary{
+    fill: #ED2623;
+}
+
+#scatter_plot circle.Iceland{
+    fill: #25409B;
+}
+
+#scatter_plot circle.Ireland{
+    fill: #47B749;
+}
+
+#scatter_plot circle.Italy{
+    fill: #47B749;
+}
+
+#scatter_plot circle.Latvia{
+    fill: #C31F26;
+}
+
+#scatter_plot circle.Lithuania{
+    fill: #FEDC34;
+}
+
+#scatter_plot circle.Luxembourg{
+    fill: #5FA0D6;
+}
+
+#scatter_plot circle.North{
+    fill: #ECD52F;
+}
+
+#scatter_plot circle.Malta{
+    fill: #ED2623;
+}
+
+#scatter_plot circle.Moldova{
+    fill: #25409B;
+}
+
+#scatter_plot circle.Montenegro{
+    fill: #C31F26;
+}
+
+#scatter_plot circle.Netherlands{
+    fill: #3F6EB6;
+}
+
+#scatter_plot circle.Norway{
+    fill: #2A47A5;
+}
+
+#scatter_plot circle.Poland{
+    fill: #ED2623;
+}
+
+#scatter_plot circle.Portugal{
+    fill: #0F8642;
+}
+
+#scatter_plot circle.Romania{
+    fill: #25409B;
+}
+
+#scatter_plot circle.Serbia{
+    fill: #ED2623;
+}
+
+#scatter_plot circle.Slovakia{
+    fill: #2D5AAB;
+}
+
+#scatter_plot circle.Slovenia{
+    fill: #2D5AAB;
+}
+
+#scatter_plot circle.Spain{
+    fill: #FEC70A;
+}
+
+#scatter_plot circle.Sweden{
+    fill: #FCDD20;
+}
+
+#scatter_plot circle.Turkey{
+    fill: #ED2623;
+}
+
+#scatter_plot circle.Ukraine{
+    fill: #FEDF22;
+}
+
+#scatter_plot circle.Kosovo{
+    fill: #25409B;
+}
+
+#scatter_plot circle.Georgia{
+    fill:#ED2623;
+}
