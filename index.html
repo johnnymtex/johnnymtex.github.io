@@ -193,6 +193,7 @@
         popup.style.display = "inline-block"
         popup.style.left = target_box.x + target_box.width + "px "
         popup.style.top = target_box.y - target_box.height + 10 + "px "
+        popup.style.zIndex = "10"
         popup.innerText = event.target.getAttribute("data")
     }
 
@@ -202,6 +203,7 @@
         popup.style.left = target_box.x + target_box.width + "px "
         popup.style.top = target_box.y - target_box.height + 10 + "px "
         popup.style.opacity = 0.75
+        popup.style.zIndex = "10"
         str = event.target.getAttribute("data")
         str = str.split(",")
         str[0] = str[0].substring(0, 1).toUpperCase() + str[0].substring(1);
